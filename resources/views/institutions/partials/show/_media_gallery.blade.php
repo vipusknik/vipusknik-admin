@@ -24,3 +24,23 @@
   @include ('institutions/partials/show/_edit-gallery-modal')
 
 @endif
+
+<div style="margin-bottom: 3rem">
+  @if (! $institution->profilePhoto())
+    <form action="{{ route('institutions.profile-photo.store', $institution) }}" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <input type="file" name="photo" required>
+        <button type="submit">Загрузить фото профиля</button>
+      </form>
+  @else
+    <a href="{{ $institution->profilePhoto()->getUrl() }}" target="_blank">
+      <img src="{{ $institution->profilePhoto()->getUrl('thumb') }}" style="margin-bottom: 1rem">
+    </a>
+
+    <form action="{{ route('institutions.profile-photo.destroy', $institution) }}" method="post">
+        {{ csrf_field() }}
+        {{ method_field('delete') }}
+        <button type="submit">Удалить фото профиля</button>
+      </form>
+  @endif
+</div>

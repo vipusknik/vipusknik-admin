@@ -58,7 +58,7 @@ Route::group(['namespace' => 'User'], function () {
     Route::resource('team-members', 'TeamMembersController', [
         'only' => ['index', 'create']
     ]);
-    
+
     /**
      * Clients
      */
@@ -239,12 +239,12 @@ Route::group(['namespace' => 'Institution', 'prefix' => '/institutions'], functi
 
         Route::get('/create', 'InstitutionsController@create')->name('institutions.create');
         Route::post('', 'InstitutionsController@store')->name('institutions.store');
-        
-        
-            
+
+
+
             Route::get('/{institution}/edit', 'InstitutionsController@edit')->name('institutions.edit');
             Route::patch('/{institution}', 'InstitutionsController@update')->name('institutions.update');
-    
+
             Route::get('/{institution}', 'InstitutionsController@show')->name('institutions.show');
         Route::delete('/{institution}', 'InstitutionsController@destroy')->name('institutions.destroy');
     });
@@ -293,6 +293,12 @@ Route::group(['namespace' => 'Institution', 'prefix' => '/institutions'], functi
      * Institution Logo
      */
     Route::patch('/{institution}/logos/{image}', 'InstitutionLogosController@update');
+
+    /**
+     * Institution profile photo
+     */
+    Route::post('/{institution}/profile-photo', 'InstitutionProfilePhotosController@store')->name('institutions.profile-photo.store');
+    Route::delete('/{institution}/profile-photo/destroy', 'InstitutionProfilePhotosController@destroy')->name('institutions.profile-photo.destroy');
 });
 
 /**
