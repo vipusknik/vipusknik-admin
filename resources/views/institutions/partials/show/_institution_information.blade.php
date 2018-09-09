@@ -79,7 +79,7 @@
           <h5 class="ui header">Веб сайт:
             <div class="sub header">
               <a href="{{ $institution->web_site_url }}" target="_blank" class="custom-link">
-                {{ $institution->getBaseUrl() }}
+                {{ $institution->web_site_display_title ?: $institution->getBaseUrl() }}
               </a>
             </div>
           </h5>

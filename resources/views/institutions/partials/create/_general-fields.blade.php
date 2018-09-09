@@ -107,15 +107,26 @@
                  placeholder="Основной телефон">
   </div>
 
+</div>
+
+<div class="fields">
   <div class="four wide field{{ $errors->has('web_site_url') ? ' error' : '' }}">
-      <label for="web_site_url">Веб-сайт</label>
+      <label for="web_site_url">Ссылка на сайт</label>
       <input type="text"
              name="web_site_url"
              value="{{ old('web_site_url') }}"
              id="web_site_url"
-             placeholder="Веб-сайт">
+             placeholder="Ссылка на сайт">
   </div>
 
+  <div class="four wide field{{ $errors->has('web_site_display_title') ? ' error' : '' }}">
+      <label for="web_site_display_title">Текст для ссылки на сайт</label>
+      <input type="text"
+             name="web_site_display_title"
+             value="{{ old('web_site_display_title') }}"
+             id="web_site_display_title"
+             placeholder="Текст для ссылки на сайт">
+  </div>
 </div>
 
 @include('institutions.partials.social-media-inputs', [
