@@ -129,9 +129,7 @@
   </div>
 </div>
 
-@include('institutions.partials.social-media-inputs', [
-    'socialMedia' => []
-])
+@include('institutions.partials.social-media-inputs')
 
 <div class="field">
       <label for="description">Описание</label>

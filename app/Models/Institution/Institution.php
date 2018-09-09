@@ -11,8 +11,7 @@ use App\Traits\Institution\{
     HasSpecialties,
     Searchable,
     HasType,
-    ComposesUrls,
-    HasSocialMedia
+    ComposesUrls
 };
 
 use Spatie\MediaLibrary\HasMedia\{
@@ -41,7 +40,6 @@ class Institution extends Model implements HasMediaConversions
     use HasType;
     use ComposesUrls;
     use HasSpecialties;
-    use HasSocialMedia;
 
     /**
      * The attributes that should be cast to native types.
@@ -54,13 +52,16 @@ class Institution extends Model implements HasMediaConversions
         'is_paid'           => 'boolean',
     ];
 
-    protected $appends = [
-        'social_media_sites'
-    ];
-
     const TYPES = [
         'college',
         'university',
+    ];
+
+    const SOCIAL_MEDIA_SITES = [
+        'vk',
+        'facebook',
+        'twitter',
+        'instagram'
     ];
 
     /**

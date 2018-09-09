@@ -58,6 +58,8 @@ class InstitutionsController extends Controller
      */
     public function create()
     {
+        $institution = new Institution;
+
         $cities = City::all()->sortBy('title');
 
         return view('institutions.create', compact('institution', 'cities'));
@@ -72,14 +74,12 @@ class InstitutionsController extends Controller
     public function store(InstitutionFormRequest $request, $institutionType)
     {
         $institution = Institution::create(
-            $request->except('reception', 'social_media')
+            $request->except('reception')
         );
 
         if (array_filter($request->reception)) {
             $institution->reception()->create($request->reception);
         }
-
-        $institution->attachSocialMedia($request->social_media);
 
         return redirect()
             ->route('institutions.show', [$institutionType, $institution]);
@@ -118,11 +118,9 @@ class InstitutionsController extends Controller
      */
     public function update(InstitutionFormRequest $request, $institutionType, Institution $institution)
     {
-        $institution->update($request->except('reception', 'social_media'));
+        $institution->update($request->except('reception'));
 
         $this->createOrUpdateReception($institution, $request->reception);
-
-        $institution->updateSocialMedia($request->social_media);
 
         return redirect()
             ->route('institutions.show', [$institutionType, $institution])
@@ -137,7 +135,6 @@ class InstitutionsController extends Controller
      */
     public function destroy($institutionType, Institution $institution)
     {
-
         $institution->delete();
 
         return redirect()->route('institutions.index', $institutionType)->withMessage('Учебное заведение удалено');

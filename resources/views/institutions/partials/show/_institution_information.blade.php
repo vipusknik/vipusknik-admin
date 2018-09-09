@@ -91,17 +91,11 @@
 
 <div>
   Социальные сети:
-  @if ($institution->socialMedia())
-    @foreach (\App\Models\Institution\SocialMedia::SERVICES as $service)
-      @php
-        $socialMedia = $institution->socialMedia();
-      @endphp
-
-      @isset ($socialMedia[$service])
-        <a href="{{ $socialMedia[$service]['url'] }}" target="_blank">
-          {{ $socialMedia[$service]['display_title'] }}
-        </a>
-      @endisset
-    @endforeach
-  @endif
+  @foreach (\App\Models\Institution\Institution::SOCIAL_MEDIA_SITES as $site)
+    @isset ($institution->{$site . '_url'})
+      <a href="{{ $institution->{$site . '_url'} }}" target="_blank">
+        {{ $institution->{$site . '_display_title'} }}
+      </a>
+    @endisset
+  @endforeach
 </div>

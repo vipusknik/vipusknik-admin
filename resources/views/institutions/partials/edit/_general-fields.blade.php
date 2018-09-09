@@ -128,9 +128,7 @@
   </div>
 </div>
 
-@include('institutions.partials.social-media-inputs', [
-    'socialMedia' => $institution->socialMedia()
-])
+@include('institutions.partials.social-media-inputs')
 
 <div class="field">
   <label for="description">Описание (Не более 700 символов)</label>
