@@ -1,0 +1,96 @@
+.main.container {
+    /*margin-top: 6em;*/
+    min-height: 600px;
+}
+
+.custom .content {
+    font-size: 16px;
+}
+.university.item {
+    cursor: default;
+}
+
+body {
+    margin-bottom: 110px;
+}
+
+.item.marked {
+  background-color: #edf0f5 !important;
+}
+
+#marker {
+  color: #34495e;
+}
+
+#marker:hover {
+  background-color: #34495e;
+  color: white !important;
+  transition: background-color 0.2s ease;
+}
+
+.label.marked {
+  color: white !important;
+  background-color: #34495e !important;
+}
+
+article {
+  font-size: 1rem !important;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+  line-height: 1.4285em !important;
+}
+
+#map-update-form {
+  display: none;
+}
+
+.custom.item {
+  cursor: default !important;
+}
+
+
+/**
+ * Institution edit/create
+ */
+
+.ui.right.aligned.header {
+   font-weight: lighter;
+   margin-top: 1px;
+}
+
+/**
+ * Pages with tables
+ */
+
+.ui.custom-table-page.container {
+  width:1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.custom-link {
+  color: #444;
+  text-decoration: underline;
+}
+
+.custom-link:hover {
+  color: #00B5AD;
+  text-decoration: none;
+}
+
+.ui.custom-table-page.container > .ui.header {
+  text-align:center;
+  margin-bottom: 40px;
+}
+
+/**
+ * Profession and article articles
+ */
+.ui.article.container {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    font-family: Verdana, sans-serif;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 0 330px 0 0;
+}

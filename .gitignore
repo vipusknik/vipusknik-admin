@@ -1,0 +1,8 @@
+/public/storage
+/storage
+/vendor
+/node_modules
+.env
+.env_prod
+*.sh
+composer.phar
