@@ -88,3 +88,20 @@
 
   </div>
 </div>
+
+<div>
+  Социальные сети:
+  @if ($institution->socialMedia())
+    @foreach (\App\Models\Institution\SocialMedia::SERVICES as $service)
+      @php
+        $socialMedia = $institution->socialMedia();
+      @endphp
+
+      @isset ($socialMedia[$service])
+        <a href="{{ $socialMedia[$service]['url'] }}" target="_blank">
+          {{ $socialMedia[$service]['display_title'] }}
+        </a>
+      @endisset
+    @endforeach
+  @endif
+</div>

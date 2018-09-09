@@ -119,6 +119,10 @@
 
 </div>
 
+@include('institutions.partials.social-media-inputs', [
+    'socialMedia' => $institution->socialMedia()
+])
+
 <div class="field">
   <label for="description">Описание (Не более 700 символов)</label>
   <textarea id="description" name="description">{!! old('description', $institution->description) !!}</textarea>

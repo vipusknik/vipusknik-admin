@@ -77,7 +77,6 @@
 <br>
 
 <div class="fields">
-
   <div class="four wide required field{{ $errors->has('city_id') ? ' error' : '' }}">
       <label for="city_id">Город</label>
         <select name="city_id" id="city_id" class="ui search dropdown">
@@ -118,6 +117,10 @@
   </div>
 
 </div>
+
+@include('institutions.partials.social-media-inputs', [
+    'socialMedia' => []
+])
 
 <div class="field">
       <label for="description">Описание</label>
