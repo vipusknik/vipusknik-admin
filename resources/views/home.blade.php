@@ -28,11 +28,11 @@
         @foreach ($messages as $message)
         <div class="event" style="margin-bottom: 15px;">
           <div class="label">
-            <img src="{{ $message->user->avatar_path }}" alt="identicon">
+            <img src="{{ $message->user ? $message->user->avatar_path : '' }}" alt="identicon">
           </div>
           <div class="content">
             <div class="summary">
-              <a>{{ $message->user->getNameOrUserName() }}</a>
+              <a>{{ $message->user ? $message->user->getNameOrUserName() : 'Пользователь не найден' }}</a>
               <div class="date">
                 {{ $message->created_at->diffForHumans() }}
               </div>
