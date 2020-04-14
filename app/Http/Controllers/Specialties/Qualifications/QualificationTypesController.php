@@ -13,7 +13,8 @@ class QualificationTypesController extends Controller
         $qualification->update(['type' => 'specialty']);
 
         return redirect()
-            ->route('specialties.edit', ['college', $qualification])
+            ->route('specialties.edit', [$institution, $qualification])
+            //^changed "college" to $institution
             ->with([
                 'message' => 'Задайте направление специальности',
                 'notification' => 'warning',

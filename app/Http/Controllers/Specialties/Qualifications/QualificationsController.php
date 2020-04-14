@@ -133,7 +133,7 @@ class QualificationsController extends Controller
     private function getCollegeSpecialtes()
     {
         return Specialty::getOnly('specialties')
-            ->of('college')
+           // ->of('college')//
             ->orderBy('title')
             ->get();
     }

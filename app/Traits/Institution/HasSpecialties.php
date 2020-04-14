@@ -25,11 +25,7 @@ trait HasSpecialties
 
     public function specialtyTypes()
     {
-        if ($this->isA('college')) {
             return ['qualifications', 'specialties'];
-        }
-
-        return ['specialties'];
     }
 
     public function specialties()
