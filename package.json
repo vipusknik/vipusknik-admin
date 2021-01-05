@@ -15,7 +15,7 @@
     "tailwindcss": "^0.6.4"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "lodash": "^4.17.10",
     "vue": "^2.5.17"
